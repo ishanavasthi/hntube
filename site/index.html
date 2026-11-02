@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HNTube — videos Hacker News keeps recommending</title>
+  <meta name="description" content="A YouTube-style index of the videos Hacker News users have recommended again and again, across many years.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    document.documentElement.dataset.theme = localStorage.getItem('hntube-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="icon-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a class="logo" href="#/" aria-label="HNTube home">
+        <span class="logo-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5z"/></svg></span>
+        <span class="logo-text">HN<b>Tube</b></span>
+      </a>
+    </div>
+    <form class="search" id="search-form" role="search">
+      <input id="search-input" type="search" placeholder="Search titles and channels" aria-label="Search" autocomplete="off">
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      </button>
+    </form>
+    <div class="topbar-right">
+      <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="sidebar" aria-label="Browse">
+      <div class="side-section" id="side-sorts"></div>
+      <div class="side-section">
+        <h3>Top channels</h3>
+        <div id="side-channels"></div>
+      </div>
+      <div class="side-section">
+        <a class="side-link" href="#/about" data-route="about">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+          <span>How videos are picked</span>
+        </a>
+      </div>
+      <p class="side-foot" id="side-foot"></p>
+    </nav>
+    <main id="main" tabindex="-1"></main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

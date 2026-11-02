@@ -1,0 +1,19 @@
+{
+  "builtAt": "2026-11-01T20:40:33.650Z",
+  "crawledAt": "2026-11-01T20:39:10.802Z",
+  "rule": {
+    "minPeople": 5,
+    "minYears": 5
+  },
+  "hnItemsScanned": 403538,
+  "distinctVideosLinked": 261630,
+  "qualifying": 2931,
+  "playable": 2794,
+  "unavailable": {
+    "401": 24,
+    "403": 35,
+    "404": 78
+  },
+  "ownThreadLinksSkipped": 1157,
+  "firstMention": 1172602086
+}

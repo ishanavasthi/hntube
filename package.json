@@ -1,0 +1,14 @@
+{
+  "name": "hntube",
+  "private": true,
+  "type": "module",
+  "description": "A YouTube-style site of videos Hacker News users have recommended repeatedly over the years.",
+  "scripts": {
+    "crawl": "node scripts/crawl.mjs",
+    "build": "node scripts/build.mjs",
+    "stats": "node scripts/build.mjs --stats",
+    "test": "node --test scripts/lib/extract.test.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
