@@ -41,6 +41,6 @@ npm run serve            # http://127.0.0.1:8080
 
 ## Deployment
 
-Live at https://hntube.ishan.eu.org: `docker compose up -d` runs nginx on `127.0.0.1:9410`, and the
-vivoserver Cloudflare Tunnel exposes it publicly. `site/` is mounted read-only, so `npm run build` updates the live
-site without a restart.
+Live at https://ishanavasthi.github.io/hntube/. Every push to `main` that touches `site/` publishes it to GitHub Pages
+(`.github/workflows/pages.yml`). There's no backend: the data is built ahead of time, so refreshing it means
+`npm run crawl && npm run build`, then commit and push `site/data`.
